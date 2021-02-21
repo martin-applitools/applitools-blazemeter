@@ -31,9 +31,6 @@ public class DemoGridTestTraditional {
     private final static String baselineURL = "http://applitoolsjenkins.eastus.cloudapp.azure.com:5000/demo.html";
     private final static String currentBuildURL = "http://applitoolsjenkins.eastus.cloudapp.azure.com:5000/demo.html?version=2";
     private final static String curl = String.format("https://%s/api/v4/grid/wd/hub", BASE);
-    public static EyesRunner runner;
-    public static Eyes eyes;
-    public static BatchInfo batch;
     public static RemoteWebDriver driver;
 
     @Rule
@@ -86,10 +83,6 @@ public class DemoGridTestTraditional {
         System.out.println("Report url: " + reportURL);
         //openInBrowser(reportURL);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        eyes = new Eyes();
-        eyes.setApiKey(System.getenv("APPLITOOLS_API_KEY"));
-        batch = new BatchInfo("Blaze Functional Demo batch");
-        eyes.setBatch(batch);
     }
 
     public static void openInBrowser(String string) {
@@ -106,7 +99,6 @@ public class DemoGridTestTraditional {
     public static void tearDown() {
         if (driver != null) {
             driver.quit();
-            eyes.abortIfNotClosed();
         }
     }
 
