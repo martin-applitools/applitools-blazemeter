@@ -14,11 +14,6 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import com.applitools.eyes.BatchInfo;
-import com.applitools.eyes.EyesRunner;
-import com.applitools.eyes.TestResultsSummary;
-import com.applitools.eyes.selenium.ClassicRunner;
-import com.applitools.eyes.selenium.Eyes;
 import static org.junit.Assert.*;
 
 public class DemoGridTestTraditional {
